@@ -51,6 +51,19 @@
         text-decoration: line-through;
         color: #444;
     }
+    button {
+        background-color: #0b4d91;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+    button:hover {
+        background-color: #093a6f;
+    }
     @media (max-width: 768px) {
         .checklist {
             padding: 15px;
@@ -98,23 +111,25 @@
         <li><input type="checkbox">¿El diseñador revisó y cumplió lo solicitado en la documentación?</li>
     </ul>
 
-     <button onclick="resetChecklist()">Reset</button>
+    <button onclick="resetChecklist()">Reset</button>
 </div>
 
 <script>
+    // Marca/desmarca visualmente
     document.querySelectorAll('#checklistAzul input[type="checkbox"]').forEach(checkbox => {
         checkbox.addEventListener('change', function() {
             this.parentElement.classList.toggle('checked', this.checked);
         });
     });
 
+    // Reset
     function resetChecklist() {
-    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(cb => cb.checked = false);
-}
+        document.querySelectorAll('.checklist input[type="checkbox"]').forEach(cb => {
+            cb.checked = false;
+            cb.parentElement.classList.remove('checked');
+        });
+    }
 </script>
 
 </body>
 </html>
-
-
-
