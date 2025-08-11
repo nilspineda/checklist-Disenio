@@ -97,6 +97,8 @@
         <li><input type="checkbox">¿Se dejaron solicitudes claras por parte de copy?</li>
         <li><input type="checkbox">¿El diseñador revisó y cumplió lo solicitado en la documentación?</li>
     </ul>
+
+     <button onclick="resetChecklist()">Reset</button>
 </div>
 
 <script>
@@ -105,7 +107,14 @@
             this.parentElement.classList.toggle('checked', this.checked);
         });
     });
+
+    function resetChecklist() {
+    document.querySelectorAll('.checklist input[type="checkbox"]').forEach(cb => cb.checked = false);
+}
 </script>
 
 </body>
 </html>
+
+
+
