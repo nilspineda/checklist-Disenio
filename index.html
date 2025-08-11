@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist Azul</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #d7ebff; /* Azul claro */
+        color: #222;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .checklist {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+        max-width: 800px;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #0b4d91;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        background-color: #f4f9ff;
+        border: 1px solid #c2dfff;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        transition: background 0.3s, color 0.3s;
+    }
+    input[type="checkbox"] {
+        margin-right: 10px;
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+    li.checked {
+        background-color: #b5d4ff;
+        text-decoration: line-through;
+        color: #444;
+    }
+    @media (max-width: 768px) {
+        .checklist {
+            padding: 15px;
+        }
+        li {
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="checklist">
+    <h2>Checklist de Revisión (Fondo Azul)</h2>
+    <ul id="checklistAzul">
+        <li><input type="checkbox">Si el logo sufrió modificaciones, ¿el diseñador dejó el logo actualizado junto con los archivos vectorizados?</li>
+        <li><input type="checkbox">¿El logo y favicon en la web se ajustaron correctamente a lo solicitado por el cliente?</li>
+        <li><input type="checkbox">¿La maqueta sigue el diseño actual, incluyendo nuevos apartados, según el branding y/o referente solicitado por el cliente?</li>
+        <li><input type="checkbox">¿El diseño se ciñe a los colores, tono y tipografías solicitados por el cliente?</li>
+        <li><input type="checkbox">¿Las imágenes representan correctamente la categoría del negocio?</li>
+        <li><input type="checkbox">¿Se aplicó correctamente el nombre comercial en el logo y en los textos?</li>
+        <li><input type="checkbox">¿Se ajustaron correctamente los productos, servicios y contexto según las solicitudes del cliente?</li>
+        <li><input type="checkbox">¿Las entradas del inicio se ajustaron de acuerdo a las nuevas secciones creadas?</li>
+        <li><input type="checkbox">¿Los nuevos textos corresponden exactamente a lo solicitado por el cliente?</li>
+        <li><input type="checkbox">¿Se dejaron los textos de blogs, proyectos, productos y/o servicios en Figma o en el kit digital?</li>
+        <li><input type="checkbox">¿La maqueta presenta problemas de márgenes, imágenes no acordes, iconos incorrectos, textos con errores ortográficos o textos de Lorem Ipsum?</li>
+        <li><input type="checkbox">¿Se incluyeron los elementos gráficos como mapa, botón de WhatsApp, reseñas de Google Maps y redes sociales solicitadas por el cliente?</li>
+        <li><input type="checkbox">¿Se incluye todos los elementos publicitarios requeridos por el Kit Digital? (No aplica fuera de subvención o PO)</li>
+        <li><input type="checkbox">¿El footer incluye los elementos mínimos requeridos por el Kit Digital? (Logo y legales)</li>
+        <li><input type="checkbox">¿Se ajustó el diseño de la web con la información de contacto solicitada por el cliente?</li>
+        <li><input type="checkbox">¿La web tiene los 3 apartados mínimos requeridos?</li>
+        <li><input type="checkbox">¿La web garantiza que todo el contenido está en castellano? (No aplica fuera de subvención o PO)</li>
+        <li><input type="checkbox">¿La maqueta sigue la estructura y plantilla de la web actual o referente?</li>
+        <li><input type="checkbox">¿Se realizaron correctamente cambios estructurales o nuevos elementos?</li>
+        <li><input type="checkbox">¿Se ajustó o eliminó el CTA según lo requerido?</li>
+        <li><input type="checkbox">¿El Figma tiene la nomenclatura de feedback revisado?</li>
+        <li><input type="checkbox">¿La calidad de las imágenes es adecuada?</li>
+        <li><input type="checkbox">¿El formato de precio coincide con lo solicitado?</li>
+        <li><input type="checkbox">¿Los iconos representan visualmente el elemento y su función?</li>
+        <li><input type="checkbox">¿Todos los textos fueron revisados para evitar errores?</li>
+        <li><input type="checkbox">¿Los cambios respetan la identidad visual?</li>
+        <li><input type="checkbox">¿El diseñador no ejecutó el replies de confirmación o justificación?</li>
+        <li><input type="checkbox">¿Se dejaron solicitudes claras por parte de diseño?</li>
+        <li><input type="checkbox">¿Se dejaron solicitudes claras por parte de copy?</li>
+        <li><input type="checkbox">¿El diseñador revisó y cumplió lo solicitado en la documentación?</li>
+    </ul>
+</div>
+
+<script>
+    document.querySelectorAll('#checklistAzul input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            this.parentElement.classList.toggle('checked', this.checked);
+        });
+    });
+</script>
+
+</body>
+</html>
